@@ -1,15 +1,15 @@
 class Solution {
 public:
-void permutaion(string str,string curr,vector<string>&ans,int k){
-    if(str==""){
-        ans.push_back(curr);
+void permutation(string original,string ans,vector<string>&v){
+    if(original==""){
+        v.push_back(ans);
         return;
     }
-    for(int i=0;i<str.length();i++){
-        char ch=str[i];
-        string left=str.substr(0,i);
-        string right=str.substr(i+1);
-        permutaion(left+right,curr+ch,ans,k);
+    for(int i=0;i<original.length();i++){
+        char ch=original[i];
+        string left=original.substr(0,i);
+        string right=original.substr(i+1);
+        permutation(left+right,ans+ch,v);
     }
 }
     string getPermutation(int n, int k) {
@@ -17,8 +17,8 @@ void permutaion(string str,string curr,vector<string>&ans,int k){
         for(int i=1;i<=n;i++){
             str+=to_string(i);
         }
-        vector<string>ans;
-        permutaion(str,"",ans,k);
-        return ans[k-1];
+        vector<string>v;
+        permutation(str,"",v);
+        return v[k-1];
     }
 };
