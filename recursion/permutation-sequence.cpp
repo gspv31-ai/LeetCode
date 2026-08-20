@@ -1,24 +1,29 @@
 class Solution {
 public:
-void permutation(string original,string ans,vector<string>&v){
-    if(original==""){
-        v.push_back(ans);
-        return;
+string helper(string str,int k,string ans){
+    int n=str.length();
+    if(n==0) return ans;
+    int fact=1;
+    for(int i=2;i<n;i++){
+        fact*=i;
     }
-    for(int i=0;i<original.length();i++){
-        char ch=original[i];
-        string left=original.substr(0,i);
-        string right=original.substr(i+1);
-        permutation(left+right,ans+ch,v);
-    }
+    int idx=k/fact;
+    if(k%fact==0) idx--;
+    char ch=str[idx];
+    string left=str.substr(0,idx);
+    string right=str.substr(idx+1);
+    int q=1;
+    if(k%fact==0) q=fact;
+    else q=k%fact;
+    return helper(left+right,q,ans+ch);
 }
     string getPermutation(int n, int k) {
         string str="";
+       // int fact=1;
         for(int i=1;i<=n;i++){
             str+=to_string(i);
         }
-        vector<string>v;
-        permutation(str,"",v);
-        return v[k-1];
+        return helper(str,k,"");
     }
+    
 };
