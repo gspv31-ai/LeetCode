@@ -7,7 +7,7 @@ public:
             int mid=lo+(hi-lo)/2;
             long long m=(long long)mid;
            // long long y=(long long)x;
-            if((m*m)==x) return mid;
+            if((mid*mid)==x) return mid;
             else if(m*m>x) hi=mid-1;
             else lo=mid+1;
         }
