@@ -13,7 +13,7 @@ public:
             }
             //right side sorted hai to move karo left side
             else{
-                if(nums[mid]>target && target<=nums[hi]) lo=mid+1;
+                if(nums[mid]<target && target<=nums[hi]) lo=mid+1;
                 else hi=mid-1;
             }
         }
