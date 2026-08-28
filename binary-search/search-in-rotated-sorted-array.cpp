@@ -6,7 +6,7 @@ public:
             mid=lo+(hi-lo)/2;
             if(nums[mid]==target) return mid;
             //left sorted hai
-            else if(nums[lo]<=nums[mid]){
+            else if(nums[0]<=nums[mid]){
                 if(nums[lo]<=target && target<nums[mid])
                     hi=mid-1;
                 else lo=mid+1;
