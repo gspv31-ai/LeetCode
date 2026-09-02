@@ -5,6 +5,7 @@ public:
        int end=x;
        int mid;
        int ans=-1;
+       if(x==0) return 0;
        while(start<=end){
         mid=end+(start-end)/2;
         if(mid==x/mid){
