@@ -4,7 +4,7 @@ public:
        int start=0;
        int end=x;
        int mid;
-       int ans=-1;
+       int ans=0;
        if(x==0) return 0;
        while(start<=end){
         mid=end+(start-end)/2;
