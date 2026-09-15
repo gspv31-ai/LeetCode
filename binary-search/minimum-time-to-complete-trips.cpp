@@ -1,6 +1,6 @@
 class Solution {
 public:
-bool check(int mid,vector<int>& time, int totalTrips){
+bool check(long long mid,vector<int>& time, int totalTrips){
     int n=time.size();
     long long trip=0;
     //1 2 3 hours=2
