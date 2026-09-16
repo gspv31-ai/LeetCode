@@ -16,7 +16,7 @@ bool check(long long mid,vector<int>& time, int totalTrips){
         for(int i=0;i<n;i++){
             mx=max(time[i],mx);
         }
-        long long lo=-1;
+        long long lo=1;
         long long hi=(long long)mx * (long long)totalTrips;
         long long ans;
         while(lo<=hi){
